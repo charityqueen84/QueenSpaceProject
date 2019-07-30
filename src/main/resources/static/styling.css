@@ -1,0 +1,12 @@
+body {
+    font-family: Perpetua;
+    font-size: 16px;
+    margin: auto; 
+    background-color: black;
+    color: gray;
+    padding: 10px;
+}
+
+header {
+    padding-left: 0px;
+}
