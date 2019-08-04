@@ -7,7 +7,7 @@ public class Facts {
         this.fact = fact;
     }
 
-    public String getCategory() {
+    public String getFact() {
         return fact;
     }
 }
