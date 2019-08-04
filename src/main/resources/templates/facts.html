@@ -7,17 +7,14 @@
     There are lots of space facts here!
 
     <br>
-    Number of space facts currently entered: <span th:text="${count}">NUMBER OF SPACE FACTS GOES HERE</span>
+    Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span>
+
 
     <ul>
-        <li>SPACE FACT GOES HERE</li>
+        <li th:each="spaceFact: ${facts}" th:text="${spaceFact}">SPACE FACT GOES HERE</li>
     </ul>
 
-   <!-- <ul>
-        <li th:each=": ${}" th:text="${}">SPACE FACT GOES HERE</li>
-    </ul>
-
-    <form method="post" action="" />
+    <!--<form method="post" action="" />
         Description: <input type="text" name="" />
         <br/><input type="submit" value="Add a space fact!"/> -->
 </head>
