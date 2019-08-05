@@ -11,41 +11,41 @@ import java.util.List;
 
 
 @Controller
+@RequestMapping("display")
 public class SpaceController {
 
     private static List<Facts> facts;
-
     public SpaceController() {
         facts = new ArrayList<Facts>();
         facts.add(new Facts("Neptune’s\n" +
-                "giant, spinning storms could swallow the whole Earth. "));
+                "giant, spinning storms could swallow the whole Earth.  "));
         facts.add(new Facts("Saturn is the only planet in our solar system that is less\n" +
                 "dense than water. It could float in a bathtub."));
     }
 
-    @RequestMapping(value = " ")
-    public String index() {
-        return "index";
+   // @RequestMapping(value = " ")
+    //public String index() {
+        //return "index";
 
-    }
-
+   // }
     @RequestMapping(value = "space")
     public String space() {
         return "space";
     }
-
-    @RequestMapping(value = "display")
+    @RequestMapping(value = "")
     public String displayFacts(Model model) {
         System.out.println("Loading space facts");
         model.addAttribute("facts", facts);
         model.addAttribute("count", 5);
         return "facts";
     }
-
     @RequestMapping(value = "new")
-    public String addFact(Model model, @RequestParam String spaceFactField) {
-        System.out.println("Adding space facts: " + spaceFactField);
+    public String addFact(Model model, @RequestParam String spaceFactField ) {
+        System.out.println("Adding space fact: " + spaceFactField);
         facts.add(new Facts(spaceFactField));
         return "redirect:";
     }
+
+
+
 }
