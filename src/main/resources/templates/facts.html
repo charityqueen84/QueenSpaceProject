@@ -11,12 +11,16 @@
 
 
     <ul>
-        <li th:each="spaceFact: ${facts}" th:text="${spaceFact}">SPACE FACT GOES HERE</li>
+        <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}">SPACE FACT GOES HERE</li>
     </ul>
 
-    <!--<form method="post" action="" />
-        Description: <input type="text" name="" />
-        <br/><input type="submit" value="Add a space fact!"/> -->
+    <form action="/display/new" method="post">
+        <input type="text" name="spaceFactField"/>
+        <input type="submit" value="Add Your Fact!"/>
+
+    </form>
+
+
 </head>
 <body>
 
