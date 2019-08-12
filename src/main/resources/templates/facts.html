@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body background="images\m81.jpg">
+<body>
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="facts.css">
+    <link rel="stylesheet" href="/facts.css">
     <title>Facts</title>
     <h1>Space Facts</h1>
-    There are lots of space facts here!
+    <p>There are lots of space facts here!</p>
 
-    <br>
-    Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span>
+
+    <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>
 
 
     <ul>

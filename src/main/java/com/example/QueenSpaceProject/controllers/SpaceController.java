@@ -26,8 +26,8 @@ public class SpaceController {
    // @RequestMapping(value = " ")
     //public String index() {
         //return "index";
+    // }
 
-   // }
     @RequestMapping(value = "space")
     public String space() {
         return "space";
@@ -45,7 +45,8 @@ public class SpaceController {
         facts.add(new Facts(spaceFactField));
         return "redirect:";
     }
-
-
-
+    @RequestMapping(value = "/*"    )
+    public String prettyDisplay() {
+        return "redirect:";
+    }
 }
