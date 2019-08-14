@@ -22,7 +22,7 @@ public class SpaceController {
         facts.add(new Facts("Saturn is the only planet in our solar system that is less\n" +
                 "dense than water. It could float in a bathtub."));
     }
-    
+
     @RequestMapping(value = "space")
     public String space() {
         return "space";
@@ -31,7 +31,7 @@ public class SpaceController {
     public String displayFacts(Model model) {
         System.out.println("Loading space facts");
         model.addAttribute("facts", facts);
-        model.addAttribute("count", 5);
+        model.addAttribute("count");             //removed 5
         return "facts";
     }
     @RequestMapping(value = "new")
