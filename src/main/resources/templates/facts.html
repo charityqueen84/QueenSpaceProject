@@ -11,9 +11,7 @@
     <h1>Space Facts</h1>
     <p>There are lots of space facts here!</p>
 
-
     <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>  <!--replaced count w/ facts.size -->
-
 
     <ul>
         <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}">SPACE FACT GOES HERE</li>
@@ -22,8 +20,6 @@
     <form action="/display/new" method="post">
         <input type="text" name="spaceFactField"/>
         <input type="submit" value="Add Your Fact!"/>
-
     </form>
-
 </body>
 </html>

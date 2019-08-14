@@ -30,8 +30,8 @@ public class SpaceController {
     @RequestMapping(value = "")
     public String displayFacts(Model model) {
         System.out.println("Loading space facts");
-        model.addAttribute("facts", facts);
-        model.addAttribute("count");             //removed 5
+        model.addAttribute("facts", facts);       //facts is a string, facts is the object (arraylist)
+                                               //removed model.addAttribute("count", 5);
         return "facts";
     }
     @RequestMapping(value = "new")
@@ -40,8 +40,8 @@ public class SpaceController {
         facts.add(new Facts(spaceFactField));
         return "redirect:";
     }
-    @RequestMapping(value = "/*"    )
-    public String prettyDisplay() {
-        return "redirect:";
-    }
+    //@RequestMapping(value = "/*"    )
+    //public String prettyDisplay() {
+    //    return "redirect:";
+    //} 
 }
