@@ -4,10 +4,13 @@ import com.example.QueenSpaceProject.models.Facts;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @Controller
@@ -35,9 +38,9 @@ public class SpaceController {
         return "facts";
     }
 
-    @RequestMapping(value = "about")
+    @RequestMapping(value = "about") //does this need to be a GET? either way, same result
     public String about(Model model) {
-        return "about";  //need to link css and it needs to return /display/about - cheese tutorial - we covered this
+        return "about";  //need to link css and it needs to return /display/about - cheese tutorial - we covered this. it works when I go to localhost:8080/display/about
     }
     @RequestMapping(value = "new")
     public String addFact(Model model, @RequestParam String spaceFactField ) {
