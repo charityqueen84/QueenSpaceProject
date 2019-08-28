@@ -34,6 +34,11 @@ public class SpaceController {
                                                //removed model.addAttribute("count", 5);
         return "facts";
     }
+
+    @RequestMapping(value = "about")
+    public String about(Model model) {
+        return "about";  //need to link css and it needs to return /display/about - cheese tutorial - we covered this
+    }
     @RequestMapping(value = "new")
     public String addFact(Model model, @RequestParam String spaceFactField ) {
         System.out.println("Adding space fact: " + spaceFactField);
@@ -43,5 +48,5 @@ public class SpaceController {
     //@RequestMapping(value = "/*"    )
     //public String prettyDisplay() {
     //    return "redirect:";
-    //} 
+    //}
 }
