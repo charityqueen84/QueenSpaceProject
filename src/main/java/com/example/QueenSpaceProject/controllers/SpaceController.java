@@ -26,7 +26,7 @@ public class SpaceController {
                 "dense than water. It could float in a bathtub."));
     }
 
-    @RequestMapping(value = "space")
+    @RequestMapping(value = "space")   //defaults to get
     public String space() {
         return "space";
     }
