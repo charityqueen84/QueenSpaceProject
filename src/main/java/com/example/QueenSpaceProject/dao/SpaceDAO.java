@@ -17,11 +17,17 @@ public class SpaceDAO {
         return jdbcTemplate.query("select * from space_schema.galaxy", new SpaceRowMapper());
     }
 
-    public void addSpaceFact(Facts galaxy){
+    public void addSpaceFact(Facts galaxy) {
         System.out.println("Inserting " + galaxy);
+        jdbcTemplate.update("INSERT INTO space_schema.galaxy(fact) VALUES (?)", galaxy.getFact()); //getFact is a method in Facts.java
+    } //changed (facts) to (fact) here to see if it helped
 
 
 
+    public void updateSpaceFact(int id, Facts galaxy) {
+        System.out.println("Updating: " + galaxy);
+        jdbcTemplate.update("UPDATE space_schema.galaxy SET fact=?", galaxy.getFact());
+//changed SET facts to SET fact
 
     }
 }

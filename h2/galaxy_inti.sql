@@ -2,7 +2,7 @@ CREATE SCHEMA space_schema authorization sa;
 
 CREATE TABLE space_schema.galaxy (
 ID INT auto_increment PRIMARY KEY,
-TITLE VARCHAR(255) DEFAULT '',
+FACT VARCHAR(255) DEFAULT '',
 
 
 INSERT INTO space_schema.galaxy VALUES (1, 'Milky Way');
