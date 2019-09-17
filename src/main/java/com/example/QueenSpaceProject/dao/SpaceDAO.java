@@ -26,7 +26,7 @@ public class SpaceDAO {
 
     public void updateSpaceFact(int id, Facts galaxy) {
         System.out.println("Updating: " + galaxy);
-        jdbcTemplate.update("UPDATE space_schema.galaxy SET fact=?", galaxy.getFact());
+        jdbcTemplate.update("UPDATE space_schema.galaxy SET fact=? where id=?", galaxy.getFact(), id);
 //changed SET facts to SET fact
 
     }

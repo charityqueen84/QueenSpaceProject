@@ -19,7 +19,7 @@
     <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>  <!--replaced count w/ facts.size -->
 
     <ul>
-        <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}">SPACE FACT GOES HERE</li>
+        <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}">SPACE FACT GOES HERE</li> <!--this is just the display of the facts -->
     </ul>
 
     <form action="/display/new" method="post">

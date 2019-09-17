@@ -24,28 +24,26 @@ public class SpaceController {
         model.addAttribute(("facts"), facts); //added parentheses around "facts"
         return "facts"; //this is the first page, where it lists any facts
     }
-    //do I need a @GetMapping here for new returning redirect? - no I don't.
-    @PostMapping(value = "new")  //added this to replace addFact method
-    public String addFact(@RequestParam String fact) {
-        System.out.println("Adding space fact: " + fact);
-        spaceDAO.addSpaceFact(new Facts(1, fact));
-        return "redirect:"; //returns you back to facts after you add a fact
+
+   //do I need a @GetMapping here for new returning redirect? - no I don't.
+   @PostMapping(value = "new")  
+   public String addFact(@RequestParam String fact) {
+       System.out.println("Adding space fact: " + fact);
+       spaceDAO.addSpaceFact(new Facts(1, fact));
+       return "redirect:"; //returns you back to facts after you add a fact
+   }
+
+
+
+   //@PostMapping(value = "") //do I actually need this method?
+   //public String displayFacts(Model model, @PathVariable String facts) { //changed method name from displayFacts to editFacts - changed back.
+   //    System.out.println("Loading space facts");
+   //    model.addAttribute("facts", facts);
+   //    return "facts";
+   //}  //commented out to see if I actually need this
+//
+
     }
-   /*@PostMapping(value = "") //do I actually need this method?
-   public String displayFacts(Model model, @PathVariable String facts) { //changed method name from displayFacts to editFacts - changed back
-       System.out.println("Loading space facts");
-       model.addAttribute("facts", facts);
-       return "facts";
-   }  //commented out to see if I actually need this */
-
-
-
-
-    }
-
-
-
-
 
     //private static List<Facts> facts;
     //public SpaceController() {
