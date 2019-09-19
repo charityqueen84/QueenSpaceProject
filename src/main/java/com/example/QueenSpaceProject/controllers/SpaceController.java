@@ -26,7 +26,7 @@ public class SpaceController {
     }
 
    //do I need a @GetMapping here for new returning redirect? - no I don't.
-   @PostMapping(value = "new")  
+   @PostMapping(value = "new")
    public String addFact(@RequestParam String fact) {
        System.out.println("Adding space fact: " + fact);
        spaceDAO.addSpaceFact(new Facts(1, fact));
