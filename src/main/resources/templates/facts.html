@@ -13,13 +13,18 @@
     <ul>
         <li><a href = "https://www.nasa.gov/">NASA</a></li>
         <li><a href = "/display/about/">About</a></li>
+
     </ul>
     <p>There are space facts here!</p>
 
     <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>  <!--replaced count w/ facts.size -->
 
+
     <ul>
-        <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}">SPACE FACT GOES HERE</li> <!--this is just the display of the facts -->
+        <li th:each="spaceFact: ${facts}"> <!-- for each spaceFact in facts list-->
+            <span th:text="${spaceFact.fact}">SPACE FACT GOES HERE</span> <!--print out the space fact to the screen-->
+            <a th:href="@{'/display/' + ${spaceFact.id} + '/edit'}" style="padding-left: 10px;">Edit</a>
+        </li>
     </ul>
 
     <form action="/display/new" method="post">

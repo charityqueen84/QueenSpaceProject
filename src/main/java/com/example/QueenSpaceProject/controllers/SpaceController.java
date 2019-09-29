@@ -33,6 +33,20 @@ public class SpaceController {
        return "redirect:"; //returns you back to facts after you add a fact
    }
 
+   //This should load the edit form when I click on edit from the facts page.
+    @GetMapping("/{id}/edit") //maybe the best way to think about this is that the "get" mapping returns the page where you are editing a fact
+    public String viewFactToEdit(Model model, @PathVariable int id) {
+        Facts spaceFact = spaceDAO.findById(id); //facts was galaxy and spaceFact, neither worked. facts didn't work either.
+        model.addAttribute("fact", spaceFact); //facts was galaxy and spaceFact, neither worked.
+        return "factEdit.html";
+    }
+   //This should allow me to edit a space fact, save the changes, and redirect me back to factEdit.html
+   @PostMapping("/{id}/edit") //the "post" mapping takes the updated bookmark from the form submit and saves it.
+    public  String editSpaceFact (@ModelAttribute Facts fact, @PathVariable int id) { //facts was galaxy and spaceFact, neither worked
+        spaceDAO.updateSpaceFact(id, fact); //facts was galaxy and spaceFact, neither worked
+        return "redirect:/display";
+   }
+
 
 
    //@PostMapping(value = "") //do I actually need this method?
