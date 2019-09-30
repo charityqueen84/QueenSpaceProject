@@ -47,6 +47,11 @@ public class SpaceController {
         return "redirect:/display";
    }
 
+   @RequestMapping("about")
+    public String about() {
+        return "about";
+   }
+
 
 
    //@PostMapping(value = "") //do I actually need this method?
