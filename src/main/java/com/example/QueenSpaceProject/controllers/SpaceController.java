@@ -47,7 +47,7 @@ public class SpaceController {
         return "redirect:/display";
    }
 
-   @RequestMapping("about")
+   @RequestMapping("about") //handler to request Spring to get the about page for me (link in facts.html - have to do this for any html pages I link to w/in html page)
     public String about() {
         return "about";
    }
