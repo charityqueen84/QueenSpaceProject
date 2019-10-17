@@ -15,9 +15,8 @@ public class SpaceRowMapper implements RowMapper<Facts> {
 
         id = resultSet.getInt("id");
         fact = resultSet.getString("fact");
+
         return new Facts(id, fact);
-//in this method, it was string spaceFact, spaceFact = resultSet, return new Facts(spaceFact)
-        //so I changed those to fact to match DAO to see if it helped
 
     }
 

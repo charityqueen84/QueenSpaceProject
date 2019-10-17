@@ -17,11 +17,10 @@ public class SpaceDAO {
         return jdbcTemplate.query("select * from space_schema.galaxy", new SpaceRowMapper());
     }
 
-    public void addSpaceFact(Facts galaxy) {  //Facts is the List, galaxy is just a random variable I picked here.
+    public void addSpaceFact(Facts galaxy) {
         System.out.println("Inserting " + galaxy);
-        jdbcTemplate.update("INSERT INTO space_schema.galaxy(fact) VALUES (?) ", galaxy.getFact()); //getFact is a method in Facts.java
-    } //changed (facts) to (fact) here to see if it helped
-
+        jdbcTemplate.update("INSERT INTO space_schema.galaxy(fact) VALUES (?) ", galaxy.getFact());
+    }
 
     public void updateSpaceFact(int id, Facts galaxy) {
         System.out.println("Updating: " + galaxy);
@@ -30,15 +29,20 @@ public class SpaceDAO {
 
     public Facts findById(int id) {
         List<Facts> matches = jdbcTemplate.query("select * from space_schema.galaxy where id = ?",
-                new Object[] { id },
+                new Object[]{id},
                 new SpaceRowMapper());
         if (matches.isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return matches.get(0);
         }
+    }
 
+    public List<Facts> findByString(String keyword) {
+        System.out.println("Finding fact by searching strings...");
+        return jdbcTemplate.query("select * from space_schema.galaxy where fact like ? ", new SpaceRowMapper(), "%" + keyword + "%");
     }
 }
+
+
 

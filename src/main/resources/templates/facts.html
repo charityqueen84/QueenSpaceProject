@@ -12,25 +12,22 @@
     <ul>
         <li><a href = "https://www.nasa.gov/">NASA</a></li>
         <li><a href = "/display/about/">About</a></li>
+        <li><a href="/display/search">Search</a> </li>
 
     </ul>
     <p>There are space facts here!</p>
 
-    <input type="text" placeholder="Search by keyword"> <!-- this is the empty search box> -->
-    <input type="submit" value="Search"/>  <!-- This is a search button. I need the box too -->
-
-    <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>  <!--replaced count w/ facts.size -->
-
+    <p>Number of space facts currently entered: <span th:text="${facts.size()}">NUMBER OF SPACE FACTS GOES HERE</span></p>
 
     <ul>
-        <li th:each="spaceFact: ${facts}"> <!-- for each spaceFact in facts list-->
-            <span th:text="${spaceFact.fact}">SPACE FACT GOES HERE</span> <!--print out the space fact to the screen-->
+        <li th:each="spaceFact: ${facts}">
+           <span th:text="${spaceFact.fact}">SPACE FACT GOES HERE</span>
             <a th:href="@{'/display/' + ${spaceFact.id} + '/edit'}" style="padding-left: 10px;">Edit</a>
         </li>
     </ul>
 
     <form action="/display/new" method="post">
-        <input type="text" name="fact"/>
+        <input type="text" name="fact" placeholder="Enter Fact Here"/>
         <input type="submit" value="Add Your Fact!"/>
     </form>
 </body>

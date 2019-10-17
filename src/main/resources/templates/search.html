@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <title>Search</title>
+</head>
+<body>
+<h1>Search For a Fact!</h1>
+<form method="get" th:action="@{'/display/search'}" th:object="${fact}">
+<input type="text" name="keyword" placeholder="Search by keyword">
+<input type="submit" value="Search"/>
+</form>
+
+
+<ul>
+    <li th:each="spaceFact: ${facts}" th:text="${spaceFact.fact}"></li>
+</ul>
+
+</body>
+</html>

@@ -5,10 +5,9 @@
     <title>Space Facts</title>
 </head>
 <body>
-<form method="post" th:action="@{'/display/' + ${fact.id} + '/edit'}" th:object="${fact}"> <!-- where display is, is that the url?? This was facts but I think that was wrong -->
+<form method="post" th:action="@{'/display/' + ${fact.id} + '/edit'}" th:object="${fact}">
     Description: <input type="text" th:field="*{fact}" />
     <input type="hidden" th:field="*{id}" />
-   <!-- <br/>Space Fact: <input type="text" th:field="*{fact}" /> -->
     <br/><input type="submit" value="Save Edited Fact"/>
 </form>
 </body>
